@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <script src="info.js"></script> -->
+    <title>My Page</title>
+  </head>
+  <body>
+    <h1>My Array</h1>
+
+    <ul>
+      <!-- The list items will be added here by JavaScript -->
+    </ul>
+
+    <script>
+      console.log(window.location.search);
+      const params = new URLSearchParams(window.location.search);
+
+      const stateClicked = params.get("state");
+
+      console.log(stateClicked);
+
+      var multiState = [
+        [
+          ["Alabama"],
+          [
+            "Montgomery",
+            "USS Alabama",
+            "Talladega Superspeedway",
+            "Cheaha State Park",
+            "Fried Green tomatoes",
+            "Pecan Pie",
+            "Fried catfish",
+            "It became a state on December 14, 1819 ",
+          ],
+        ]["Alaska"],
+        [
+          "Juneau",
+          "Northern Lights",
+          "Denali National Park",
+          "Inside Passage",
+          "Reindeer Sausage",
+          "Anything Salmon",
+          "Berry Cobbler",
+          "It became a state on January 3, 1959.",
+        ],
+
+        ["Arizona"],
+        [
+          "Phoenix",
+          "Grand Canyon",
+          "Sedona",
+          "Horse Shoe Bend",
+          "Fry Bread",
+          "Chimichanga",
+          "Cactus Candy",
+          "It became a state on February 14, 1912.",
+        ],
+
+        ["Arkansas"],
+        [
+          "Little Rock",
+          "Hot Springs National Park",
+          "Crystal Bridges Museum of American Art",
+          "Buffalo National River",
+          "Fried Catfish",
+          "Chocolate Gravy",
+          "Purple Hull Peas",
+          "It became a state on June 15, 1836.",
+        ],
+
+        ["California"],
+        [
+          "Sacremento",
+          "San Francisco",
+          "Yosemite National Park",
+          "Lake Tahoe",
+          "Fried Catfish",
+          "Chocolate Gravy",
+          "Purple Hull Peas",
+          "It became a state on June 15, 1836.",
+        ],
+
+        ["Colorado"],
+        [
+          "Denver",
+          "Rocky Mountain",
+          "National Park",
+          "Garden of Gods, Durango",
+          "Palisade Peaches",
+          "Colorado Green Chilli",
+          "Denver Omelet",
+          "It became a state on August 1, 1876.",
+        ],
+
+        ["Connecticut"],
+        [
+          "Hartford",
+          "Mystic Seaport Museum",
+          "Gillette Castle State Park",
+          "Litchfield Hills",
+          "New Haven Pizza",
+          "Clam Chowder",
+          "Lobster Rolls",
+          "It became a state on January 9, 1788.",
+        ],
+
+        ["Delaware"],
+        [
+          "Dover",
+          "Rehoboth Beach",
+          "Lewes",
+          "Delaware Water Gap",
+          "Apple Scramble",
+          "Grotto Pizza",
+          "Chicken Chesapeake",
+          "It became a state on December 7, 1787. ",
+        ],
+
+        ["Florida"],
+        [
+          "Tallahassee",
+          "South Beach",
+          "St. Augustine",
+          "Naples",
+          "Key Lime Pie",
+          "Cuban Sandwich",
+          "Conch Fritters",
+          "It became a state on March 3, 1845.",
+        ],
+
+        ["Georgia"],
+        [
+          "Atlanta",
+          "Savannah",
+          "Jekyll Island",
+          "Callaway Island",
+          "Brunswick Stew",
+          "Boiled Peanuts",
+          "Shrimp and Grits",
+          "It became a state on January 2, 1788",
+        ]["Hawaii"],
+        [
+          "Honolulu",
+          "Waikiki Beach",
+          "Haleakala National Park",
+          "Pearl Harbor National Memorial",
+          "Poke",
+          "Shave Ice",
+          "Manapua",
+          "It became a state on August 21st 1959",
+        ],
+
+        ["Idaho"],
+        [
+          "Boise",
+          "Sun Valley",
+          "Sawtooth Mountains",
+          "Silverwood Theme Park",
+          "Marionberry Pie",
+          "Basque Cuisine",
+          "Morel Mushrooms",
+          "It became a state on August 21st 1959",
+        ],
+
+        ["Illinois"],
+        [
+          "Springfield",
+          "Starved Rock State Park",
+          "Galena",
+          "Cahokia Mounds State Historic Site",
+          "Chicago Style Pizza",
+          "Jibarito Sandwich",
+          "Corn on the Cob",
+          "It became a state on December 3, 1818",
+        ],
+
+        ["Indiana"],
+        [
+          "Indianapolis",
+          "Indianapolis Motor Speedway",
+          "Indiana Dunes National Park",
+          "The Indianapolis Zoo",
+          "Indiana-style chili",
+          "Fried biscuits and apple butter",
+          "Duckpin bowling alley snacks",
+          "It became a state on December 11, 1816",
+        ],
+
+        ["Iowa"],
+        [
+          "Des Moines",
+          "The Amana Colonies",
+          "Bridges of Madison County",
+          "Iowa Great Lakes",
+          "Pork Tenderloin Sandwich",
+          "Dutch Letters",
+          "Kolaches",
+          "It became a state on December 28, 1846",
+        ],
+
+        ["Kansas"],
+        [
+          "Topeka",
+          "Tallgrass Prairie National Preserve",
+          "Monument Rocks",
+          "Amelia Earhart Birthplace Museum",
+          "Kansas City-style barbecue",
+          "Bierocks",
+          "Churned ice cream",
+          "It became a state on January 29, 1861",
+        ],
+
+        ["Kentucky"],
+        [
+          "Frankfort",
+          "Mammoth Cave National Park",
+          "Kentucky Bourbon Trail",
+          "Newport Aquarium",
+          "Burgoo",
+          "Derby Pie",
+          "Spoonbread",
+          "It became a state on June 1, 1792.",
+        ],
+
+        ["Louisiana"],
+        [
+          "Baton Rouge",
+          "Lake Pontchartrain",
+          "Avery Island",
+          "Natchitoches",
+          "Gumbo",
+          "Po'boys",
+          "Bananas Foster",
+          "It became a state on April 30, 1812.",
+        ],
+
+        ["Maine"],
+        ["Augusta", "Acadia National Park", "Bar Harbor", "Camden"],
+        [
+          "Lobster",
+          "Clam Chowder",
+          "Blueberry Pie",
+          "It became a state on March 15, 1820.",
+        ],
+
+        ["Maryland"],
+        [
+          "Annapolis",
+          "Baltimore",
+          "Chesapeake Bay",
+          "Antietam National Battlefield",
+          "Blue crabs",
+          "Smith island cake",
+          "Maryland-style fried chicken",
+          "It became a state on April 28, 1788.",
+        ],
+
+        ["Massachusetts"],
+        [
+          "Boston",
+          "The freedom trail",
+          "Salem",
+          "Cape Cod",
+          "Lobster Rolls",
+          "Boston Cream Pie",
+          "Fried Clams",
+          "It became a state on February 6, 1788.",
+        ],
+        ["Michigan"],
+        [
+          "Lansing",
+          "Mackinac Island",
+          "The Henry Ford Museum of American Innovation",
+          "Pictured Rocks National Lakeshore",
+          "Detroit style pizza",
+          "Sanders bumpy cake",
+          "Coney dog",
+          "It became a state on January 26, 1837.",
+        ],
+        ["Minnesota"],
+        [
+          "St. Paul",
+          "Mall of America",
+          "Boundary Waters Canoe Area Wilderness",
+          "Voyageurs National Park",
+          "Juicy Lucy",
+          "Lutefisk",
+          "Krumkake",
+          "It became a state on May 11, 1858.",
+        ],
+
+        ["Mississippi"],
+        [
+          "Jackson",
+          "Gulf Islands National Seashore",
+          "Elvis Presley Birthplace and Museum",
+          "Vicksburg National Military Park",
+          "Fried Catfish",
+          "Biscuits and Gravy",
+          "Pecan Pie",
+          "It became a state on December 10, 1817.",
+        ],
+        ["Missouri"],
+        [
+          "Jefferson City",
+          "Gateway Arch",
+          "St. Louis",
+          "Silver Dollar City",
+          "Branson Lake of the Ozarks",
+          "Gooey Butter Cake",
+          "Toasted Ravioli",
+          "Slinger",
+          "It became a state on August 10, 1821.",
+        ],
+
+        ["Montana"][
+          ("Helena",
+          "Glacier National Park",
+          "Avalanche Lake",
+          "Boseman",
+          "Huckleberries",
+          "Cinnamon Roll",
+          "Local Pizza",
+          "Montana became a state on November 8, 1889.")
+        ],
+
+        ["Nebraska"],
+        [
+          "Lincoln",
+          "Chimney Rock National Landmark",
+          "Omaha's Henry Dourly Zoo and Aquarium, Niobrara River",
+          "Kool-Aid",
+          "Corn",
+          "Valentino Pizza",
+          "Nebraska became a state on March 1, 1867.",
+        ],
+
+        ["Nevada"],
+        [
+          "Carson City",
+          "Hoover Dam",
+          "Valley of Fire State Park",
+          "High Roller Ferris Wheel",
+          "Tamales",
+          "Sourdough Bread",
+          "In-N-Out Burger",
+          "Nevada became a state on October 31, 1864.",
+        ],
+
+        ["New Hampshire"],
+        [
+          "Concord",
+          "Ice Castles",
+          "Polar Caves Park, Mount Washington",
+          "Apple cider doughnuts",
+          "Ketchup Sandwich",
+          "Bacon Sundae",
+          "January 5th, 1776.",
+        ],
+
+        ["New Jersey"],
+        [
+          "Trenton",
+          "Statue of Liberty",
+          "Ellis Island",
+          "Hudson River",
+          "Hot Dogs",
+          "Salt Water Taffy",
+          "Egg Salad Sandwich",
+          "It became a state on December 18, 1787.",
+        ],
+
+        ["New Mexico"],
+        [
+          "Santa Fe",
+          "Santa Fe Plaza",
+          "Hot air balloon festival",
+          "Carlsbad caverns",
+          "Blue Corn Pancakes",
+          "Red Cheese Enchiladas",
+          "Burritos",
+          "It became a state on January 6th, 1912.",
+        ],
+
+        ["New York"],
+        [
+          "Albany",
+          "Columbia University, Manhattan",
+          "World Trade Center",
+          "Ellis Island (Statue of Liberty)",
+          "Deep Dish Pizza",
+          "Hot Dogs",
+          "Bagels",
+          "It became a state on July 26th, 1788.",
+        ],
+
+        ["North Carolina"],
+        [
+          "Raleigh",
+          "Durham, Nags Head",
+          "Emerald Isle",
+          "North-Carolina Style Barbeque",
+          "Krispy Kreme",
+          "Hot Dogs and Hamburgers",
+          "It became a state on November 21, 1789.",
+        ],
+
+        ["North Dakota"],
+        [
+          "Bismarck",
+          "Theodore Roosevelt National Park",
+          "Lake Sakakawea",
+          "Devils Lake",
+          "Rye Bread",
+          "Hot Dish Casserole",
+          "Pickled Beets",
+          "It became a state on November 2, 1889.",
+        ],
+        ["Ohio"],
+        [
+          "Columbus",
+          "Cleveland Botanical Garden",
+          "Rock and Roll Hall of Fame",
+          "Cedar Point Resort",
+          "Sauerkraut Balls",
+          "Klondike Ice Cream Bars",
+          "Skyline Chili",
+          "It became a state on March 1, 1803.",
+        ],
+
+        ["Oklahoma"],
+        [
+          "Oklahoma City",
+          "Oklahoma City Memorial and Museum",
+          "Wichita Mountains",
+          "Glover River",
+          "Onion Burgers",
+          "Tacos",
+          "Pecan Pie",
+          "It became a state on November 16, 1907.",
+        ],
+
+        ["Oregon"],
+        [
+          "Salem",
+          "Crater Lake National Park",
+          "Multnomah Falls",
+          "Washington Park",
+          "Marionberries",
+          "Grilled Cheese Sandwiches",
+          "Voodoo Doughnuts",
+          "It became a state on February 14, 1859.",
+        ],
+
+        ["Pennsylvania"],
+        [
+          "Harrisburg",
+          "Independence national park",
+          "The Liberty Bell",
+          "The Appalachian National Scenic Trail",
+          "Pretzels",
+          "Tomato Pie",
+          "Philadelphia Style Vanilla Ice Cream",
+          "It became a state on December 12, 1787.",
+        ],
+
+        ["Rhode Island"],
+        [
+          "Providence",
+          "The Breakers Mansion",
+          "Cliff Walk",
+          "Fort Adams State Park",
+          "Pizza Strips",
+          "Doughnut Cake",
+          "Kettle Corn",
+          "It became a state on May 4, 1776.",
+        ],
+        ["South Carolina"],
+        [
+          "Columbia",
+          "Charleston",
+          "Myrtle Beach",
+          "Kings Creek Falls",
+          "Boiled Peanuts",
+          "Fried Okra",
+          "Peaches and Cream Ice Cream",
+          "It became a state on March 26, 1776.",
+        ],
+
+        ["South Dakota"],
+        [
+          "Pierre",
+          "Wind Cave National Park",
+          "Custer State Park",
+          "Mount Rushmore",
+          "Chili and Cinnamon/Caramel Rolls",
+          "Gabubu Bread",
+          "Kolache",
+          "It became a state on November 2, 1889.",
+        ],
+
+        ["Tennessee"],
+        [
+          "Nashville",
+          "The Great Smoky Mountains National Park",
+          "Dollywood",
+          "Country Music Hall of Fame",
+          "Moonpies",
+          "Cornbread",
+          "Banana Pudding",
+          "It became a state on June 1, 1796.",
+        ],
+
+        ["Texas"],
+        [
+          "Austin",
+          "Almo",
+          "San Antonio Riverwalk",
+          "Space Center Houston",
+          "Pecan Pie",
+          "Brisket",
+          "Tacos",
+          "It became a state on December 29, 1845.",
+        ],
+        ["Utah"],
+        [
+          "Salt Lake City",
+          "Zion National Park",
+          "The Great Salt Lake",
+          "Monument Valley",
+          "Ice Cream Shake",
+          "Casserole",
+          "Funnel Potatoes",
+          "It became a state on January 4, 1896.",
+        ],
+        ["Vermont"],
+        [
+          "Montpelier",
+          "Hildene",
+          "The Lincoln Family Home",
+          "Burlington Bike Path",
+          "Church Street Marketplace",
+          "Apple Pie and Cheddar Cheese",
+          "Fried Dough",
+          "Pie",
+          "It became a state on March 4, 1791.",
+        ],
+
+        ["Virginia"],
+        [
+          "Richmond",
+          "Jamestown",
+          "Williamsburg, Air and Space Museum",
+          "Peanuts",
+          "Apples",
+          "Raspberry Pie",
+          "It became a state in 1607.",
+        ],
+
+        ["Washington"],
+        [
+          "Olympia",
+          "Mount Rainier National Park",
+          "San Juan Island",
+          "Olympic Peninsula",
+          "Dick’s Burgers",
+          "Washington Apples",
+          "Washington Potatoes",
+          "It became a state on November 11, 1889.",
+        ],
+
+        ["West Virginia"],
+        [
+          "Charleston",
+          "New River Gorge National Park",
+          "Harpers Ferry",
+          "Seneca Caverns",
+          "Black Walnuts",
+          "Buckwheat Pancakes",
+          "Pepperoni Rolls",
+          "It became a state on June 20, 1863.",
+        ],
+
+        ["Wisconsin"],
+        [
+          "Madison",
+          "Pattison State Park",
+          "Small Town of Oshkosh",
+          "Dairy Farms",
+          "Fish Fries",
+          "Cranberries",
+          "Cheese",
+          "It became a state on May 29, 1848.",
+        ],
+
+        ["Wyoming"],
+        [
+          "Cheyenne",
+          "Yellowstone National Park",
+          "Grand Teton National Park",
+          "Jackson Ski Resorts",
+          "Chokecherry Jam",
+          "Cooked Elk",
+          "Bison Burger",
+          "It became a state on July 10, 1890.",
+        ],
+      ];
+      //[["California"], ["Sacremento", "Grape", "Mango"]],
+      //[["Texas"], ["Austin", "Apple", "Banana"]],
+      //[["Virginia"], ["Richmond", "Kiwi", "Coconut"]],
+      // Get a reference to the list element
+      var myList = document.querySelector("ul");
+      console.log(multiState.length);
+      // Loop through the array and add each item to the list
+      for (var i = 0; i < multiState.length; i++) {
+        if (stateClicked == multiState[i][0][0]) {
+          var listItem = document.createElement("li");
+          listItem.textContent = multiState[i];
+          myList.appendChild(listItem);
+          break;
+        } else {
+          console.log("State not matching");
+        }
+      }
+    </script>
+  </body>
+</html>

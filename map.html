@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="map.css" />
+    <script src="map.js"></script>
+    <meta charset="utf-8" />
+    <title>Travel Map</title>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Welcome to our Travel Map</h1>
+    <h2>Click on a state to learn more about it!</h2>
+    <h3>Atlantic Ocean</h3>
+    <h4>Pacific Ocean</h4>
+    <script type="text/javascript">
+      const width = 1200;
+      const height = 650;
+      const svg = d3
+        .select("body")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+      const projection = d3
+        .geoAlbersUsa()
+        .translate([width / 2, height / 2]) // translate to center of screen
+        .scale([1400]); // scale things down so see entire US
+
+      const path = d3.geoPath().projection(projection);
+
+      d3.json(
+        "https://gist.githubusercontent.com/Bradleykingz/3aa5206b6819a3c38b5d73cb814ed470/raw/a476b9098ba0244718b496697c5b350460d32f99/us-states.json",
+        function (error, uState) {
+          if (error) throw error;
+          svg
+            .selectAll("path")
+            .data(uState.features)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .on("click", function (event, d) {
+              var clickedState = event.properties.name;
+              console.log("Clicked on state:" + clickedState);
+              window.location.href = "info.html" + "?state=" + clickedState;
+            });
+
+          svg
+            .append("g")
+            .attr("class", "state-labels")
+            .selectAll("text")
+            .data(uState.features)
+            .enter()
+            .append("text")
+            .attr("transform", function (d) {
+              return "translate(" + path.centroid(d) + ")";
+            })
+            .attr("dy", "0.20em")
+            .attr("dx", "-2em")
+            .text(function (d) {
+              console.log(d.properties.name);
+              return d.properties.name;
+            });
+        }
+      );
+    </script>
+  </body>
+</html>
